@@ -52,16 +52,51 @@
 
 ---
 
+### Phase 3 : Application Layer (v0.1.0) - ✅ **COMPLÉTÉE**
+
+#### 3.1 Order Use Cases
+
+- [x] `PlaceOrder` : Placer un ordre (taker ou maker)
+- [x] `CancelOrder` : Annuler un ordre
+- [x] `ModifyOrder` : Modifier un ordre
+- [x] `QueryOrders` : Interroger les ordres
+
+#### 3.2 Strategy Use Cases
+
+- [x] `ExecuteStrategy` : Exécuter une stratégie live
+- [x] `BacktestStrategy` : Backtester une stratégie
+- [x] `MonitorStrategy` : Monitorer une stratégie live
+
+#### 3.3 Transfer Use Cases
+
+- [x] `TransferTokens` : Transférer des tokens
+- [x] `TrackTransfer` : Suivre un transfert
+- [x] `ReconcileBalances` : Réconcilier les balances
+
+#### 3.4 Ports (Interfaces)
+
+- [x] `ExchangePort` : Interface pour opérations d'échange
+- [x] `BacktestPort` : Interface pour backtesting
+- [x] `BlockchainPort` : Interface pour opérations blockchain
+
+#### 3.5 Adapters
+
+- [x] `ExchangeAdapter` : Implémentation ExchangePort avec HyperliquidAPI
+- [x] `BacktestAdapter` : Implémentation BacktestPort avec BacktestEngine
+- [x] `BlockchainAdapter` : Implémentation BlockchainPort avec TokenTransferService
+
+---
+
 ## 🚧 Phases En Cours
 
-Aucune phase en cours - Prêt pour Phase 3
+Aucune phase en cours - Prêt pour Phase 4
 
 ---
 
 ## 📊 Statistiques
 
-- **Tests unitaires** : ~900+ lignes de tests
-- **Couverture de code** : Tests complets pour Phase 1 et Phase 2
+- **Tests unitaires** : ~2000+ lignes de tests
+- **Couverture de code** : Tests complets pour Phase 1, Phase 2 et Phase 3
 - **Documentation** : ✅ Complète (README, RULES, ROADMAP, docstrings)
 - **CI/CD** : ⏳ À configurer
 - **Pre-commit hooks** : ⏳ À configurer
@@ -70,19 +105,19 @@ Aucune phase en cours - Prêt pour Phase 3
 
 ## 🎯 Prochaines Étapes
 
-1. **Phase 3** : Application Layer
-   - Use Cases (PlaceOrder, CancelOrder, ExecuteStrategy, BacktestStrategy)
-   - Ports (interfaces)
-   - Tests d'intégration
-
-2. **Phase 4** : Market Making
+1. **Phase 4** : Market Making
    - Avellaneda-Stoikov
    - Maker Orders
 
-3. **Phase 5** : Risk Management
+2. **Phase 5** : Risk Management
    - Position Limits
    - Circuit Breakers
    - Slippage Protection
+
+3. **Phase 6** : Monitoring & Reporting
+   - Métriques de performance
+   - Logging structuré
+   - Alertes
 
 ---
 

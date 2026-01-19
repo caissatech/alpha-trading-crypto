@@ -1,6 +1,11 @@
 """Infrastructure layer."""
 
-from alpha_trading_crypto.infrastructure.adapters import HyperliquidAPI
+from alpha_trading_crypto.infrastructure.adapters import (
+    BacktestAdapter,
+    BlockchainAdapter,
+    ExchangeAdapter,
+    HyperliquidAPI,
+)
 from alpha_trading_crypto.infrastructure.backtest import BacktestEngine, BacktestResult
 from alpha_trading_crypto.infrastructure.blockchain import EthereumProvider, TokenTransferService
 from alpha_trading_crypto.infrastructure.exceptions import (
@@ -18,6 +23,9 @@ from alpha_trading_crypto.infrastructure.exceptions import (
 __all__ = [
     # Adapters
     "HyperliquidAPI",
+    "ExchangeAdapter",
+    "BacktestAdapter",
+    "BlockchainAdapter",
     # Backtest
     "BacktestEngine",
     "BacktestResult",

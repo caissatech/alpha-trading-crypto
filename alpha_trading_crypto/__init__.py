@@ -19,10 +19,25 @@ from alpha_trading_crypto.domain.services import (
     PositionManager,
     TransferManager,
 )
+from alpha_trading_crypto.application.use_cases import (
+    BacktestStrategy,
+    CancelOrder,
+    ExecuteStrategy,
+    ModifyOrder,
+    MonitorStrategy,
+    PlaceOrder,
+    QueryOrders,
+    ReconcileBalances,
+    TrackTransfer,
+    TransferTokens,
+)
 from alpha_trading_crypto.infrastructure import (
+    BacktestAdapter,
     BacktestEngine,
     BacktestResult,
+    BlockchainAdapter,
     EthereumProvider,
+    ExchangeAdapter,
     HyperliquidAPI,
     TokenTransferService,
 )
@@ -46,8 +61,22 @@ __all__ = [
     "TransferManager",
     # Infrastructure
     "HyperliquidAPI",
+    "ExchangeAdapter",
+    "BacktestAdapter",
+    "BlockchainAdapter",
     "BacktestEngine",
     "BacktestResult",
     "EthereumProvider",
     "TokenTransferService",
+    # Use Cases
+    "PlaceOrder",
+    "CancelOrder",
+    "ModifyOrder",
+    "QueryOrders",
+    "ExecuteStrategy",
+    "BacktestStrategy",
+    "MonitorStrategy",
+    "TransferTokens",
+    "TrackTransfer",
+    "ReconcileBalances",
 ]
