@@ -1,0 +1,126 @@
+[tool.poetry]
+name = "alpha-trading-crypto"
+version = "0.1.0"
+description = "Trading system for crypto perp futures on Hyperliquid - Backtesting and Live Trading"
+authors = ["caissatech"]
+readme = "README.md"
+license = "UNLICENSED"
+packages = [{include = "alpha_trading_crypto"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+# Core data processing
+pandas = "^2.0.0"
+numpy = "^1.24.0"
+
+# API & Web
+httpx = "^0.25.0"
+websockets = "^12.0"
+
+# Crypto & Blockchain
+eth-account = "^0.9.0"
+web3 = "^6.11.0"
+
+# Async
+asyncio = "^3.4.3"
+
+# Configuration
+pydantic = "^2.5.0"
+pydantic-settings = "^2.1.0"
+
+# Logging
+structlog = "^23.2.0"
+
+# Type checking
+typing-extensions = "^4.8.0"
+
+[tool.poetry.group.dev.dependencies]
+# Testing
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+pytest-asyncio = "^0.21.0"
+pytest-mock = "^3.12.0"
+
+# Code quality
+ruff = "^0.1.0"
+black = "^23.10.0"
+mypy = "^1.6.0"
+isort = "^5.12.0"
+pre-commit = "^3.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by black)
+    "B008",  # do not perform function calls in argument defaults
+    "UP007",  # Use X | Y for type annotations (we use Optional for compatibility)
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]  # unused imports
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "pandas.*",
+    "numpy.*",
+    "web3.*",
+    "eth_account.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--cov=alpha_trading_crypto",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-report=xml",
+    "--strict-markers",
+    "-v",
+]
+markers = [
+    "unit: Unit tests",
+    "integration: Integration tests",
+    "slow: Slow running tests",
+    "e2e: End-to-end tests",
+]
+
