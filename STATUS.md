@@ -4,36 +4,65 @@
 
 ## ✅ Phases Complétées
 
-Aucune phase complétée - Projet en planification
+### Phase 1 : Domain Layer (v0.1.0) - ✅ **COMPLÉTÉE**
+
+#### 1.1 Entities
+
+- [x] `Order` : Ordre (id, symbol, side, quantity, price, type, status, timestamp)
+- [x] `Position` : Position (symbol, size, entry_price, unrealized_pnl, funding)
+- [x] `Inventory` : Inventaire (token, free, locked, total)
+- [x] `Token` : Token (symbol, decimals, chain, address)
+- [x] `Transfer` : Transfert (from_chain, to_chain, token, amount, status, tx_hash)
+
+#### 1.2 Services
+
+- [x] `OrderManager` : Gestion des ordres (create, cancel, update, track)
+- [x] `InventoryManager` : Gestion inventaire (update, verify, reconcile)
+- [x] `PositionManager` : Gestion positions (update, calculate_pnl, funding)
+- [x] `TransferManager` : Gestion transferts (initiate, track, verify)
+
+### Phase 2 : Infrastructure Layer (v0.1.0) - ✅ **COMPLÉTÉE**
+
+#### 2.1 Hyperliquid API
+
+- [x] `HyperliquidAPI` : Client API Hyperliquid
+  - [x] Authentification (signature messages)
+  - [x] Market Data (prices, orderbook, trades)
+  - [x] Account Info (balances, positions, orders)
+  - [x] Order Placement (market, limit, stop)
+  - [x] Order Management (cancel, modify, query)
+  - [x] Funding Rates (current, historical)
+
+#### 2.2 Backtest Engine
+
+- [x] `BacktestEngine` : Moteur de backtesting
+  - [x] Simulation de marché (prices, orderbook)
+  - [x] Simulation d'ordres (execution, slippage)
+  - [x] Simulation de funding
+  - [x] Métriques de performance (Sharpe, drawdown, etc.)
+
+#### 2.3 Blockchain Integration
+
+- [x] `EthereumProvider` : Provider Web3 pour Ethereum
+- [x] `TokenTransferService` : Service de transfert de tokens
+  - [x] Transfert ETH → Hyperliquid
+  - [x] Transfert Hyperliquid → ETH
+  - [x] Tracking des transactions
+  - [x] Gestion des gas fees
 
 ---
 
 ## 🚧 Phases En Cours
 
-### Phase 1 : Domain Layer (v0.1.0) - 🔴 **NON DÉMARRÉ**
-
-#### 1.1 Entities
-
-- [ ] `Order` : Ordre (id, symbol, side, quantity, price, type, status, timestamp)
-- [ ] `Position` : Position (symbol, size, entry_price, unrealized_pnl, funding)
-- [ ] `Inventory` : Inventaire (token, free, locked, total)
-- [ ] `Token` : Token (symbol, decimals, chain, address)
-- [ ] `Transfer` : Transfert (from_chain, to_chain, token, amount, status, tx_hash)
-
-#### 1.2 Services
-
-- [ ] `OrderManager` : Gestion des ordres (create, cancel, update, track)
-- [ ] `InventoryManager` : Gestion inventaire (update, verify, reconcile)
-- [ ] `PositionManager` : Gestion positions (update, calculate_pnl, funding)
-- [ ] `TransferManager` : Gestion transferts (initiate, track, verify)
+Aucune phase en cours - Prêt pour Phase 3
 
 ---
 
 ## 📊 Statistiques
 
-- **Tests unitaires** : 0/0
-- **Couverture de code** : 0%
-- **Documentation** : ✅ Complète (README, RULES, ROADMAP)
+- **Tests unitaires** : ~900+ lignes de tests
+- **Couverture de code** : Tests complets pour Phase 1 et Phase 2
+- **Documentation** : ✅ Complète (README, RULES, ROADMAP, docstrings)
 - **CI/CD** : ⏳ À configurer
 - **Pre-commit hooks** : ⏳ À configurer
 
@@ -41,18 +70,19 @@ Aucune phase complétée - Projet en planification
 
 ## 🎯 Prochaines Étapes
 
-1. **Phase 1** : Domain Layer
-   - Créer les entités (Order, Position, Inventory, Token, Transfer)
-   - Créer les services (OrderManager, InventoryManager, etc.)
-   - Tests unitaires
+1. **Phase 3** : Application Layer
+   - Use Cases (PlaceOrder, CancelOrder, ExecuteStrategy, BacktestStrategy)
+   - Ports (interfaces)
+   - Tests d'intégration
 
-2. **Phase 2** : Infrastructure Layer
-   - API Hyperliquid
-   - Backtest Engine
-   - Blockchain Integration
+2. **Phase 4** : Market Making
+   - Avellaneda-Stoikov
+   - Maker Orders
 
-3. **Phase 3** : Application Layer
-   - Use Cases (PlaceOrder, CancelOrder, etc.)
+3. **Phase 5** : Risk Management
+   - Position Limits
+   - Circuit Breakers
+   - Slippage Protection
 
 ---
 

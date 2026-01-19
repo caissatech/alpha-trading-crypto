@@ -19,6 +19,13 @@ from alpha_trading_crypto.domain.services import (
     PositionManager,
     TransferManager,
 )
+from alpha_trading_crypto.infrastructure import (
+    BacktestEngine,
+    BacktestResult,
+    EthereumProvider,
+    HyperliquidAPI,
+    TokenTransferService,
+)
 
 __all__ = [
     "__version__",
@@ -37,4 +44,10 @@ __all__ = [
     "InventoryManager",
     "PositionManager",
     "TransferManager",
+    # Infrastructure
+    "HyperliquidAPI",
+    "BacktestEngine",
+    "BacktestResult",
+    "EthereumProvider",
+    "TokenTransferService",
 ]
