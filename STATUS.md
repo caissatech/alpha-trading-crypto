@@ -85,18 +85,40 @@
 - [x] `BacktestAdapter` : Implémentation BacktestPort avec BacktestEngine
 - [x] `BlockchainAdapter` : Implémentation BlockchainPort avec TokenTransferService
 
+### Phase 4 : Market Making (v0.1.0) - ✅ **COMPLÉTÉE**
+
+#### 4.1 Avellaneda-Stoikov
+
+- [x] Modèle Avellaneda-Stoikov
+- [x] Calcul spread optimal
+- [x] Gestion inventaire cible
+- [x] Optimisation bid-ask
+
+#### 4.2 Maker Orders
+
+- [x] Placement ordres maker
+- [x] Gestion spread dynamique
+- [x] Réajustement automatique
+- [x] Protection inventaire
+
+#### 4.3 Use Cases
+
+- [x] `StartMarketMaking` : Démarrer le market making
+- [x] `UpdateMarketMaking` : Mettre à jour les quotes
+- [x] `StopMarketMaking` : Arrêter le market making
+
 ---
 
 ## 🚧 Phases En Cours
 
-Aucune phase en cours - Prêt pour Phase 4
+Aucune phase en cours - Prêt pour Phase 5
 
 ---
 
 ## 📊 Statistiques
 
-- **Tests unitaires** : ~2000+ lignes de tests
-- **Couverture de code** : Tests complets pour Phase 1, Phase 2 et Phase 3
+- **Tests unitaires** : ~3000+ lignes de tests
+- **Couverture de code** : Tests complets pour Phase 1, Phase 2, Phase 3 et Phase 4
 - **Documentation** : ✅ Complète (README, RULES, ROADMAP, docstrings)
 - **CI/CD** : ⏳ À configurer
 - **Pre-commit hooks** : ⏳ À configurer

@@ -79,4 +79,7 @@ __all__ = [
     "TransferTokens",
     "TrackTransfer",
     "ReconcileBalances",
+    "StartMarketMaking",
+    "UpdateMarketMaking",
+    "StopMarketMaking",
 ]

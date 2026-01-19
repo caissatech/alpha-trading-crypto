@@ -11,6 +11,11 @@ from alpha_trading_crypto.application.use_cases.strategy_use_cases import (
     ExecuteStrategy,
     MonitorStrategy,
 )
+from alpha_trading_crypto.application.use_cases.market_making_use_cases import (
+    StartMarketMaking,
+    StopMarketMaking,
+    UpdateMarketMaking,
+)
 from alpha_trading_crypto.application.use_cases.transfer_use_cases import (
     ReconcileBalances,
     TrackTransfer,
@@ -31,5 +36,9 @@ __all__ = [
     "TransferTokens",
     "TrackTransfer",
     "ReconcileBalances",
+    # Market making use cases
+    "StartMarketMaking",
+    "UpdateMarketMaking",
+    "StopMarketMaking",
 ]
 
