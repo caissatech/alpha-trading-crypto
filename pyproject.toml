@@ -31,6 +31,9 @@ pydantic-settings = "^2.1.0"
 # Logging
 structlog = "^23.2.0"
 
+# Quantitative models (optional - requires quant-kit to be built)
+# quant-kit = { git = "ssh://git@github.com/caissatech/quant-kit.git", branch = "main", optional = true }
+
 # Type checking
 typing-extensions = "^4.8.0"
 

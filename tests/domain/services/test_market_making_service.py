@@ -6,7 +6,7 @@ import pytest
 
 from alpha_trading_crypto.domain.entities.order import Order, OrderSide, OrderStatus, OrderType
 from alpha_trading_crypto.domain.entities.position import Position
-from alpha_trading_crypto.domain.services.avellaneda_stoikov import (
+from alpha_trading_crypto.domain.services.avellaneda_stoikov_adapter import (
     AvellanedaStoikov,
     AvellanedaStoikovParams,
 )
@@ -18,13 +18,22 @@ from alpha_trading_crypto.domain.services.position_manager import PositionManage
 @pytest.fixture
 def as_model() -> AvellanedaStoikov:
     """Create Avellaneda-Stoikov model."""
+    from unittest.mock import MagicMock, patch
+
     params = AvellanedaStoikovParams(
         risk_aversion=0.1,
         volatility=0.02,
         arrival_rate=10.0,
         reservation_spread=0.001,
     )
-    return AvellanedaStoikov(params=params)
+    with patch("alpha_trading_crypto.domain.services.avellaneda_stoikov_adapter.qk") as mock_qk:
+        mock_qk_model = MagicMock()
+        mock_qk_model.calculate_optimal_spread.return_value = (49900.0, 50100.0)
+        mock_qk_model.calculate_spread.return_value = 200.0
+        mock_qk_model.calculate_optimal_quantities.return_value = (1.0, 1.0)
+        mock_qk.PyAvellanedaStoikovParams.return_value = MagicMock()
+        mock_qk.PyAvellanedaStoikov.return_value = mock_qk_model
+        return AvellanedaStoikov(params=params)
 
 
 @pytest.fixture

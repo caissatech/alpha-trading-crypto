@@ -79,6 +79,7 @@ Le système suit une architecture Clean Architecture avec 3 couches :
   - `httpx`, `websockets` (API Hyperliquid)
   - `web3`, `eth-account` (blockchain transfers)
   - `pydantic` (configuration)
+  - `quant-kit` (quantitative models - Avellaneda-Stoikov, etc.)
 
 ## Installation
 

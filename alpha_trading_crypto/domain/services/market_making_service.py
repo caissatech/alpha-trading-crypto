@@ -6,7 +6,7 @@ import structlog
 
 from alpha_trading_crypto.domain.entities.order import Order, OrderSide, OrderType
 from alpha_trading_crypto.domain.entities.position import Position
-from alpha_trading_crypto.domain.services.avellaneda_stoikov import (
+from alpha_trading_crypto.domain.services.avellaneda_stoikov_adapter import (
     AvellanedaStoikov,
     AvellanedaStoikovParams,
 )

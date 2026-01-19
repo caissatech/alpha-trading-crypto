@@ -1,6 +1,6 @@
 """Domain services."""
 
-from alpha_trading_crypto.domain.services.avellaneda_stoikov import (
+from alpha_trading_crypto.domain.services.avellaneda_stoikov_adapter import (
     AvellanedaStoikov,
     AvellanedaStoikovParams,
 )
